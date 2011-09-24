@@ -1,27 +1,30 @@
 package euler;
 
-import static java.lang.StrictMath.sqrt;
-
 /**
  */
 public class P010SumOfPrimesBellow2M {
 
     public static void main(String[] args) {
         int max = 2000000;
-        boolean [] isNotPrime = new boolean[max];
+        boolean[] notPrime = new boolean[max];
 
-        long sum = 0;
+        notPrime[2] = false;
 
-        isNotPrime[2] = false;
-
-        for (int i = 2; i < max; i++) {
-            if (!isNotPrime[i]) {
-                sum += i;
-                for (int j = 2 * i ; j < max; j+= i) {
-                    isNotPrime[j] = true;
+        for (int i = 2; i * i < max; i ++) {
+            if (!notPrime[i]) {
+                for (int j = i * i; j < max; j += i) {
+                    notPrime[j] = true;
                 }
             }
         }
+
+        long sum = 0;
+        for (int i = 2; i < max; i++) {
+            if (!notPrime[i]) {
+                sum += i;
+            }
+        }
+
         System.out.println(sum);
     }
 }
