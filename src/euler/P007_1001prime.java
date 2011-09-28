@@ -3,9 +3,15 @@ package euler;
 /**
  */
 public class P007_1001prime {
+
     public static void main(String[] args) {
 
-        long[] primes = new long[10001];
+        long[] primes = findPrimes(10001);
+        System.out.println(primes.length + ": " + primes[primes.length - 1]);
+    }
+
+    public static long[] findPrimes(final int number) {
+        long[] primes = new long[number];
 
         primes[0] = 2;
 
@@ -24,6 +30,8 @@ public class P007_1001prime {
                 primes[primesCount++] = candidate;
             }
         }
-        System.out.println(primesCount + ": " + primes[primesCount - 1]);
+        return primes;
     }
+
+
 }
