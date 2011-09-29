@@ -18,7 +18,7 @@ public class P017NumOfLettersIn1to1000 {
             0, 0, 6, 6, 5, 5, 5, 7, 6, 6
     };
 
-    static int letters(int n) {
+    static int countLetters(int n) {
         int count = 0;
 
         int thousands = n / 1000;
@@ -49,7 +49,7 @@ public class P017NumOfLettersIn1to1000 {
 
         int sum = 0;
         for (int i = 1; i <= 1000; i++) {
-            sum += letters(i);
+            sum += countLetters(i);
 
         }
         System.out.println(sum);
@@ -74,7 +74,7 @@ public class P017NumOfLettersIn1to1000 {
 
         int sum = 0;
         for (int i = 1; i <= 5; i++) {
-            sum += letters(i);
+            sum += countLetters(i);
 
         }
         assertEquals(19, sum);
@@ -82,6 +82,6 @@ public class P017NumOfLettersIn1to1000 {
 
 
     private void assertLengthEquals(String s, int n) {
-        assertEquals(s.replaceAll("[-\\s]", "").length(), letters(n));
+        assertEquals(s.replaceAll("[-\\s]", "").length(), countLetters(n));
     }
 }
