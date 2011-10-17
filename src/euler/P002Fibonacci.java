@@ -2,7 +2,7 @@ package euler;
 
 /**
  */
-public class Fibonacci {
+public class P002Fibonacci {
 
     private static final int MAX = 4000000;
 

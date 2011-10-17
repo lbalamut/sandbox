@@ -2,10 +2,7 @@ package euler;
 
 import org.junit.Test;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.Charset;
 
 import static java.util.Arrays.sort;
@@ -16,7 +13,8 @@ import static org.junit.Assert.assertEquals;
 public class P022NamesRanking {
 
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(new File("./src/euler/P022names.txt")));
+        String fileName = "./src/euler/P022names.txt";
+        BufferedReader reader = reader(fileName);
 
         String[] names = reader.readLine().replaceAll("\"", "").split(",");
 
@@ -27,6 +25,10 @@ public class P022NamesRanking {
             sum += rank(names[i]) * (i + 1);
         }
         System.out.println(sum);
+    }
+
+    private static BufferedReader reader(String fileName) throws FileNotFoundException {
+        return new BufferedReader(new FileReader(new File(fileName)));
     }
 
     @Test

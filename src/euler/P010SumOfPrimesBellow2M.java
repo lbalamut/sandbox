@@ -1,5 +1,7 @@
 package euler;
 
+import static euler.EulerUtils.findPrimeSieve;
+
 /**
  */
 public class P010SumOfPrimesBellow2M {
@@ -14,22 +16,6 @@ public class P010SumOfPrimesBellow2M {
                 sum += i;
             }
         }
-
         System.out.println(sum);
-    }
-
-    public static boolean[] findPrimeSieve(int max) {
-        boolean[] notPrime = new boolean[max];
-
-        notPrime[2] = false;
-
-        for (int i = 2; i * i < max; i ++) {
-            if (!notPrime[i]) {
-                for (int j = i * i; j < max; j += i) {
-                    notPrime[j] = true;
-                }
-            }
-        }
-        return notPrime;
     }
 }

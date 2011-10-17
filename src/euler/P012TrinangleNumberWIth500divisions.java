@@ -1,13 +1,11 @@
 package euler;
 
 
-import static euler.P007_1001prime.findPrimes;
-
 /**
  */
 public class P012TrinangleNumberWIth500divisions {
 
-    static long[] primes = findPrimes(500);
+    static long[] primes = EulerUtils.findPrimes(500);
 
     public static void main(String[] args) {
 
@@ -27,7 +25,6 @@ public class P012TrinangleNumberWIth500divisions {
             }
         }
     }
-
 
     private static int divisors(long number) {
         int divisors = 1;
@@ -49,6 +46,4 @@ public class P012TrinangleNumberWIth500divisions {
         }
         return divisors;
     }
-
-
 }

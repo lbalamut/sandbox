@@ -2,7 +2,7 @@ package euler;
 
 import java.math.BigInteger;
 
-import static euler.P020Factorials.sumOfDigits;
+import static euler.EulerUtils.sumOfDigits;
 
 /**
  */

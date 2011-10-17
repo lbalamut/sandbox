@@ -1,5 +1,7 @@
 package euler;
 
+import static euler.EulerUtils.findPrimes;
+
 /**
  */
 public class P007_1001prime {
@@ -10,28 +12,6 @@ public class P007_1001prime {
         System.out.println(primes.length + ": " + primes[primes.length - 1]);
     }
 
-    public static long[] findPrimes(final int number) {
-        long[] primes = new long[number];
-
-        primes[0] = 2;
-
-        int primesCount = 1;
-
-        for (int candidate = 3; primesCount < primes.length; candidate += 2) {
-
-            boolean isPrime = true;
-            for (int j = 0; j < primesCount; j++) {
-                if (candidate % primes[j] == 0) {
-                    isPrime = false;
-                    break;
-                }
-            }
-            if (isPrime) {
-                primes[primesCount++] = candidate;
-            }
-        }
-        return primes;
-    }
 
 
 }
