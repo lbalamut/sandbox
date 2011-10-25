@@ -26,7 +26,7 @@ public class P005MinDivisable1_20 {
                 return;
             }
         }
-        throw new IllegalStateException("cannot increase primes powers anymore");
+        throw new IllegalStateException("cannot increase primes pow5 anymore");
     }
 
     public static void main(String[] args) {
